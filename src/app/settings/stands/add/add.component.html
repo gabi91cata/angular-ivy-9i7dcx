@@ -1,0 +1,107 @@
+<div class="modal fade show  animate__animated animate__fadeIn animate__fast" >
+   <form   [formGroup]="standForm" (ngSubmit)="onSubmit()">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content   animate__animated animate__zoomIn animate__faster ">
+        <div class="modal-header">
+          <div>
+            <h5 class="modal-title">Adaugă stativ</h5>
+            <div>
+                Definește mai jos stativul care urmeaza sa fie folosit in aparat.
+            </div>
+          </div>
+          
+        </div>
+        <div class="modal-body">
+
+          <div class="mb-3 row">
+            <label for="identification" class="col-3 col-form-label p-2">
+                <strong class="text-dark">Tip stativ</strong>
+                <div class="small">
+                   Tipul de folosire al stativului. 
+                </div>
+            </label>
+            <div class="col-sm p-2">
+              <select class="form-select" formControlName="type" >
+                <option selected value="null" > --- Selectază un tip de folosire ---</option>
+                <option value="input">Intrare</option>
+                <option value="output">Iesire</option>
+              </select>
+            
+              
+            </div>
+             
+          </div>
+          
+          <div class="mb-3 row">
+            <label for="identification" class="col-3 col-form-label p-2">
+                <strong class="text-dark">Identificare</strong>
+                <div class="small">
+                    Folosit ca si cod de bare pentru identificarea stativului in aparat
+                </div>
+            </label>
+            <div class="col-sm p-2">
+                <div class="input-group mb-3">
+                    <input   type="text" class="form-control" placeholder="Ex.: STV551" formControlName="identification"  >
+                    <button (click)="generate()" class="btn btn-light btn-with-icon" type="button" id="button-addon2">
+                        <iconify-icon inline icon="majesticons:reload" width="22"></iconify-icon>
+                        Genereaza
+                    </button>
+                  </div>
+            </div>
+            <div class="col-auto">
+              <qrcode [qrdata]="standForm.value.identification" [width]="80" [errorCorrectionLevel]="'M'"></qrcode>
+
+            </div>
+             
+          </div>
+
+          
+          <div class="mb-3 row">
+            <label for="identification" class="col-3 col-form-label p-2">
+                <strong class="text-dark">Număr eprubete</strong>
+                <div class="small">
+                   
+                </div>
+            </label>
+            <div class="col-sm p-2">
+              <div class="row">
+                <div class="col">
+                  <div class="input-group mb-3">
+                    <span class="input-group-text bg-light  ">Coloane</span>
+                    <input type="number" class="form-control" placeholder="Ex.: 8" formControlName="columns">
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="input-group mb-3">
+                    <span class="input-group-text bg-light">Rânduri</span>
+                    <input type="number" class="form-control" placeholder="Ex.: 8" formControlName="rows">
+                  </div>
+                </div>
+              </div>
+              Stativul are in total <strong>{{ total() }} eprubete</strong>
+              <div class="small">
+                Daca un loc din stativ nu poate fi folosit, acesta se va declara in pagina de calibrare.
+              </div>
+            </div>
+             
+          </div>
+          
+           
+              
+        </div>
+        <div class="modal-footer">
+          <div class="text-center" *ngIf="loading">
+            <iconify-icon icon="eos-icons:three-dots-loading" width="40"></iconify-icon>
+            <div>
+                Se incarcă...
+            </div>
+        </div>
+
+        
+          <a routerLink=".." class="btn btn-light">Renunță</a>
+          <button class="btn btn-primary">Salvează</button>
+        </div>
+      </div>
+    </div>
+</form>
+  </div>

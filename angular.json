@@ -18,9 +18,17 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
-            "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.css"],
-            "scripts": []
+            "assets": ["src/favicon.ico", "src/assets"], 
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/animate.css/animate.min.css",
+              "src/styles.css"
+            ],
+            "scripts": [
+              "node_modules/iconify-icon/dist/iconify-icon.min.js",
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js" 
+            ]
           },
           "configurations": {
             "production": {
@@ -28,7 +36,7 @@
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
-                }
+                } 
               ],
               "optimization": true,
               "outputHashing": "all",
@@ -81,5 +89,8 @@
       }
     }
   },
-  "defaultProject": "demo"
+  "defaultProject": "demo",
+  "cli": {
+    "analytics": "8747c469-aefa-43ae-86b0-f5b16ae24412"
+  }
 }

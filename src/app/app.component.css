@@ -1,3 +1,1 @@
-p {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
+.wrapper{display:flex;height:100vh}.nav{padding:10px;background-color:#fff;border-right:1px solid rgba(0,0,0,.06)}.nav img.logo{position:absolute;width:73px;top:-8px;left:-8px;image-rendering:-webkit-optimize-contrast}.nav .nav-link{border:0;font-size:1em;letter-spacing:2px;padding:10px;margin-bottom:5px;display:inline-flex;border-radius:6px;color:#616161}.nav .nav-link span{line-height:19px;margin-left:5px;display:none}.nav .nav-link.active{font-weight:bold;border-color:rgba(0,0,0,0);color:#000;background-color:rgba(0,0,0,.09)}.nav .nav-link:not(.active):hover{background-color:rgba(0,0,0,.05)}.nav-tabs{border-bottom:0}.nav-content{background-color:#fff;z-index:1;position:relative}

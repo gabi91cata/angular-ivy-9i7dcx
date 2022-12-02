@@ -1,0 +1,89 @@
+@import "../../../vars.scss";
+
+.not-found{
+    iconify-icon.icon{
+        background-color: lighten($primary, 46);
+        padding: 10px;
+        border-radius: 50%;
+        position: relative;
+        z-index: 1;
+        color: $primary;
+        &:before{
+            position: absolute;
+            content: "";
+            width: 30px;
+            height: 30px;
+            background-color: lighten($primary, 42);
+        
+            border-radius: 50%;
+            position: absolute;
+            top: 7.5px;
+            left: 7.5px;
+            z-index: -1;
+        }
+    }
+    strong{
+        color: $gray-900;
+        font-size: 16px;
+    }
+    p{
+        color: $gray-600;
+    }
+}
+
+.table-responsive{
+    border-radius: 8px;
+    border:1px solid $gray-200;
+    table.table{
+        margin-bottom: 0;
+        thead{
+            th{
+                word-wrap:unset;
+                white-space: nowrap; 
+                border-color:$gray-200;
+                background-color: $gray-100;
+                padding: 13px 24px;
+                color: $gray-800;
+                font-weight: 500;
+                font-size: 12px;
+            }
+        }
+        tbody{
+            tr:last-child{
+                td{
+                    border-bottom-width: 0;
+                }
+            }
+           
+            tr{
+                td{
+                  
+                    vertical-align: middle;
+                    border-color:$gray-200;
+                    padding: 13px 24px;
+                    color: $gray-900;
+                    font-size: 14px;
+                    .name{
+                        font-weight: 600;
+                    }
+                }
+                td:first-child{
+                    width: 10px; 
+                }
+                td:nth-child(2){
+                    width: 35%; 
+                }
+                td:last-child{
+                    word-wrap:unset;
+                    white-space: nowrap; 
+                }
+            }  
+            tr:hover{
+                td{
+                    background-color:$gray-100; 
+                }
+            }
+           
+        }
+    }
+}

@@ -1,0 +1,98 @@
+<div class="d-flex">
+    <div>
+        <h5>Stative</h5>
+        <p>De aici poti să setezi chestii la stative</p>
+        
+    </div>
+    <div class="ms-auto">
+        <a class="btn btn-secondary btn-with-icon" routerLink="add">
+            <iconify-icon inline icon="prime:plus" width="22"></iconify-icon>
+            Adaugă stativ</a> 
+    </div>
+</div>
+
+<div class="mt-3">
+
+    <div class="text-center" *ngIf="!loaded">
+        <iconify-icon icon="eos-icons:three-dots-loading" width="40"></iconify-icon>
+        <div>
+            Se incarcă...
+        </div>
+    </div>
+
+    <div class="p-4 text-center not-found" *ngIf="!list.length && loaded">
+        <div>
+            <iconify-icon class="icon" icon="prime:search" width="25"></iconify-icon>
+        </div>
+        <div class="mt-1">
+            <strong>Nu sunt stative</strong>
+            <p>Poti defini un stativ apasand butonul "+ Adauga Stativ"</p>
+            <button class="btn btn-secondary btn-with-icon" routerLink="add">
+                <iconify-icon inline icon="prime:plus" width="22"></iconify-icon>
+                Adaugă stativ</button> 
+        </div>
+    </div>
+    <div class="table-responsive" *ngIf="list.length && loaded">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th >
+                        #
+                    </th>
+                    <th>
+                        Identificator
+                    </th>
+                    <th>
+                        Nr. eprubete
+                    </th>
+                    <th>
+                        Tip
+                    </th>
+                    <th>
+                        Data creare
+                    </th>
+                   
+                    <th>
+    
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of list; index as i">
+                    <td>
+                        {{ i+1 }}
+                    </td>
+                    <td> 
+                        <div class="name">
+                            {{ item.name }}
+                        </div>
+                    </td>
+                    <td>
+                        {{ item.number }}
+                    </td>
+                    <td>
+                        {{ item.type }}
+                    </td>
+    
+                    <td>
+                        {{ item.created_at  |date:'dd.mm.YYYY' }}
+                    </td>
+                    
+                    <td class="text-end">
+                        <a href="" class="btn btn-link p-2 text-dark">
+                            <iconify-icon inline icon="prime:pencil" width="24"></iconify-icon>
+
+                        </a>
+                        <a href="" class="btn btn-link p-2 text-dark">
+                            <iconify-icon inline icon="prime:trash" width="24"></iconify-icon>
+
+                        </a>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+   
+</div>
+<router-outlet></router-outlet>

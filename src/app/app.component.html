@@ -1,2 +1,30 @@
-<hello name="{{ name }}"></hello>
-<p>Start editing to see some magic happen :) 123 321</p>
+ 
+    <div class="wrapper">
+            
+        <ul class="nav flex-column ">
+            <li>
+                <img class="logo" src="assets/logo.svg">
+            </li>
+            <li class="nav-item mt-5">
+                <a class="nav-link"routerLinkActive="active" routerLink="/home">
+                    <iconify-icon icon="ri:home-6-line"></iconify-icon> 
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"  routerLinkActive="active" routerLink="/settings">
+                    <iconify-icon icon="ri:settings-4-line"></iconify-icon>
+                    <span>SETTINGS</span>
+                </a> 
+            </li>
+             
+        </ul>
+        <div class="nav-content w-100 h-100" > 
+            <router-outlet></router-outlet>
+            
+        </div>
+</div>
+
+
+ 
+  
